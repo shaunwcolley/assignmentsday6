@@ -17,7 +17,7 @@ class ShoppingList:
             print(f"{i + 1} {self.items[i].item_name}")
 
 def add_list():
-    list = ShoppingList(input("Please enter name of list:\n>> "), input("Please describe list:\n>> "))
+    list = ShoppingList(input("Please enter name of list (store name):\n>> "), input("Please describe list (why this store?):\n>> "))
     master_list.append(list)
 
 def show_lists():
@@ -27,8 +27,10 @@ def show_lists():
 def view_all_lists():
     for i in range(0, len(master_list)):
         print(f"{master_list[i].list_name} - {master_list[i].description}")
+        print("-----------------------------")
         for item in master_list[i].items:
             print(f"{item.item_name} - {item.quantity}")
+        print("\n")
 
 def add_item():
     a = True
