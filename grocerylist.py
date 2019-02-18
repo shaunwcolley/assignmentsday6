@@ -16,6 +16,10 @@ class ShoppingList:
         self.description = description
         self.items = []
 
+    def show_item():
+        for i in range(0, len(self.items)):
+            print(f"{i + 1} {self.items[i].item_name}")
+
 def add_list():
     list = ShoppingList(input("Please enter name of list:\n>> "), input("Please describe list:\n>> "))
     #print(f"{list.list_name}: {list.description}")
@@ -46,7 +50,33 @@ def add_item():
             print(f"{item.quantity} {item.item_name} added to {master_list[list_add - 1].list_name}")
             a = False
 
-
+def del_list():
+    show_lists()
+    a = True
+    while a == True:
+        list_del = int(input("Please enter list number:\n>> "))
+        if list_del <= len(master_list):
+            del master_list[(list_del - 1)]
+            a = False
+        else:
+            print(f"Please give a number up to {str(len(master_list) + 1)}, thank you!")
+#not finished with del_item
+def del_item():
+    show_lists()
+#    a = True
+#    while a == True:
+#        item_list = int(input("Please enter list number:\n>> "))
+#        for i in range(0, len(master_list)):
+#            if item_list - 1 == master_list[i]:
+#                item_del = int(input("Please enter item number:\n>> "))
+#                for i2 in range(0, len(master_list[i].items)):
+#                    if item_del - 1 == master_list[i].items[i2]:
+#                        del master_list[i].items[item_del-1]
+#                        a == False
+#                    else:
+#                        print(f"Please give a number up to {str(len(master_list[i].items))}.")
+#            else:
+#                print(f"Please give a number up to {str(len(master_list) + 1)}, thank you!")
 
 def show_menu():
     print("Please enter the following:")
@@ -66,9 +96,9 @@ while user_input != "q":
     elif user_input == "2":
         add_item()
     elif user_input == "3":
-        print("3")
+        del_item()
     elif user_input == "4":
-        print("4")
+        del_list()
     elif user_input == "5":
         view_all_lists()
     elif user_input != "q":
