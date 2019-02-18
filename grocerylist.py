@@ -1,7 +1,3 @@
-#class MasterList:
-#    def __init__(self):
-#        self.lists = []
-
 
 master_list = []
 
@@ -22,7 +18,6 @@ class ShoppingList:
 
 def add_list():
     list = ShoppingList(input("Please enter name of list:\n>> "), input("Please describe list:\n>> "))
-    #print(f"{list.list_name}: {list.description}")
     master_list.append(list)
 
 def show_lists():
@@ -40,13 +35,11 @@ def add_item():
     while a == True:
         show_lists()
         list_add = int(input("Please enter list number:\n>> "))
-        #for i in range(0, len(master_list)):
         if list_add - 1 not in range(0, len(master_list)):
             print("Please enter appropriate list number.")
         else:
             item = GroceryItem(input("Item name:\n>> "), input("How many:\n>> "))
             master_list[list_add - 1].items.append(item)
-            #print(f"{master_list[list_add - 1].items}")
             print(f"{item.quantity} {item.item_name} added to {master_list[list_add - 1].list_name}")
             a = False
 
