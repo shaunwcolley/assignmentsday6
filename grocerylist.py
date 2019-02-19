@@ -58,20 +58,7 @@ def del_list():
 #not finished with del_item
 def del_item():
     show_lists()
-#    a = True
-#    while a == True:
-#        item_list = int(input("Please enter list number:\n>> "))
-#        for i in range(0, len(master_list)):
-#            if item_list - 1 == master_list[i]:
-#                item_del = int(input("Please enter item number:\n>> "))
-#                for i2 in range(0, len(master_list[i].items)):
-#                    if item_del - 1 == master_list[i].items[i2]:
-#                        del master_list[i].items[item_del-1]
-#                        a == False
-#                    else:
-#                        print(f"Please give a number up to {str(len(master_list[i].items))}.")
-#            else:
-#                print(f"Please give a number up to {str(len(master_list) + 1)}, thank you!")
+
 
 def show_menu():
     print("Please enter the following:")
